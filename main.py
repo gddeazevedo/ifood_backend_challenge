@@ -1,8 +1,11 @@
 import uvicorn
 from fastapi import FastAPI, status
+from api.routers import playlists
 
 
 app = FastAPI()
+
+app.include_router(playlists.router)
 
 
 @app.get('/', status_code=status.HTTP_200_OK, response_model=dict[str, str])
