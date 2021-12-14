@@ -1,10 +1,16 @@
 import uvicorn
+import os
 from fastapi import FastAPI, status
 from api.routers import playlists
+from dotenv import load_dotenv
+
+
+load_dotenv() # Loads variables from .env file
+
+PORT = int(os.environ.get('PORT')) or 8000
 
 
 app = FastAPI()
-
 app.include_router(playlists.router)
 
 
@@ -14,7 +20,7 @@ def root() -> dict[str, str]:
 
 
 def main():
-    uvicorn.run('main:app', port=8000, reload=True)
+    uvicorn.run('main:app', port=PORT, reload=True)
 
 
 if __name__ == '__main__':

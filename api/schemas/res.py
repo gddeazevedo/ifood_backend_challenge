@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 
-class FindPlacesResponse(BaseModel):
+class PlaylistsResponse(BaseModel):
     playlist: list[str]
