@@ -10,16 +10,11 @@ def get_place_temperature(city: str, lat: str, lon: str):
             status_code=response.status_code,
             detail=response.reason)
 
+    return response.json()['main']['temp']
+
 
 def get_playlist_by_place_temperature(city: str, lat: str, lon: str):
-    response = get_place_temperature(city, lat, lon)
-
-    if not response.ok:
-        raise HTTPException(
-            status_code=response.status_code,
-            detail=response.reason)
-
-    temperature = response.json()['main']['temp']
+    temperature = get_place_temperature(city, lat, lon)
 
     response = SpotifyRepository.get(temperature)
 
