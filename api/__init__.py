@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .playlists.router import router as playlists_router
+from . import playlists
 
 
 api = FastAPI()
@@ -13,4 +13,4 @@ api.add_middleware(
     allow_headers=['*']
 )
 
-api.include_router(playlists_router)
+api.include_router(playlists.router)

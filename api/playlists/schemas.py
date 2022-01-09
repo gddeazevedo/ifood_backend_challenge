@@ -3,4 +3,8 @@ from pydantic import BaseModel
 
 
 class PlaylistsResponse(BaseModel):
-    playlist: dict[str, Any]
+    playlist: list[Any]
+
+
+class TemperatureResponse(BaseModel):
+    temperature: float

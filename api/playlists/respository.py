@@ -5,7 +5,7 @@ import requests
 SPOTIFY_API_URL = f"{os.environ.get('SPOTIFY_API_URL')}/{os.environ.get('SPOTIFY_USER_ID')}/playlists"
 
 
-class OpenWeatherRepository:
+class OpenWeatherApiRepository:
     @staticmethod
     def get(city: str, lat: str, lon: str):
         params = {
@@ -19,7 +19,7 @@ class OpenWeatherRepository:
         return requests.get(os.environ.get('OPEN_WEATHER_MAPS_API_URL'), params=params)
 
 
-class SpotifyRepository:
+class SpotifyApiRepository:
     @staticmethod
     def get(temperature: float):
         headers = {
