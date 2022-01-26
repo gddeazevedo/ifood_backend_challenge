@@ -1,7 +1,7 @@
 from typing import Optional, Any
 from fastapi import APIRouter, status
 from .schemas import PlaylistsResponse, TemperatureResponse
-from api.playlists import controller
+from . import controller
 
 
 router = APIRouter(
