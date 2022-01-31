@@ -29,10 +29,10 @@ class SpotifyApiRepository:
         if temperature > 30:
             # TODO: Fetch party tracks
             pass
-        elif temperature >= 15 and temperature <= 30:
+        elif 15 <= temperature <= 30:
             # TODO: Fetch pop tracks
             pass
-        elif temperature >= 10 and temperature <= 14:
+        elif 10 <= temperature <= 14:
             # TODO: Fetch rock music tracks
             pass
         else:
